@@ -1,15 +1,15 @@
 import fs from "node:fs/promises";
 import pMap from "p-map";
 
-const baseUrl = `https://raw.githack.com/Tigerchops/Scribed-Bricks/images`;
-const items = Array.from({ length: 10_000 })
+const baseUrl = `https://github.com/Tigerchops/Scribed-Bricks/blob/e6f290077c1c01ebd057b5c3c8f05d74d499fb80/images`;
+const items = Array.from({ length: 5_000 })
   .fill(0)
   .map((_, index) => index);
 
 let html = "";
 
 function splitArrayIntoGroups(array, groupSize) {
-  const result = [];
+  const result = [];ws
 
   for (let i = 0; i < array.length; i += groupSize) {
     result.push(array.slice(i, i + groupSize));
@@ -59,7 +59,7 @@ await pMap(
           stats.minted += 1;
           html += `<a href="https://ethscriptions.com/ethscriptions/${x.eth.transaction_hash}" target="_blank" class="item" data-minted="true" style="opacity: 0.5" title="MINTED! Scribed-Brick ${x.index}" data-id="${x.index}"><img alt="Scribed-Brick ${x.index}" loading="lazy" src="https://api.ethscriptions.com/api/ethscriptions/${x.eth.transaction_hash}/data" style="width: 128px; height: 128px; border: 2px dashed red;"></a>`;
         } else {
-          html += `<div class="item" data-id="${x.index}" title="Scribed-bricks ${x.index}"><img alt="Scribed-Brick ${x.index}" loading="lazy" src="${x.dataURI}" style="width: 1280px; height: 128px;"></div>`;
+          html += `<div class="item" data-id="${x.index}" title="Scribed-bricks ${x.index}"><img alt="Scribed-Brick ${x.index}" loading="lazy" src="${x.dataURI}" style="width: 128px; height: 128px;"></div>`;
           // const div = `<div class="item" data-id="${index}"><img alt="Moonbird ${index}" src="https://api.github.com/repos/Tigerchops/Scribed-Bricks/images/${index}.png" style="width: 128px; height: 128px;"></div>`;
         }
       },
