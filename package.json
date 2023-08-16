@@ -1,12 +1,12 @@
 {
-  "name": "esc-moonbirds",
+  "name": "Scribed-Bricks",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "node main.mjs && vite build && cp ./status.json ./dist",
     "dev": "vite .",
-    "surged": "surge dist/ https://moonbirds-ethscriptions.surge.sh",
+    "surged": "surge dist/ https://Scribed-Bricks.surge.sh",
     "deploy": "npm run build && npm run surged"
   },
   "keywords": [],

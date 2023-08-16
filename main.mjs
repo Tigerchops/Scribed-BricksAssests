@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import pMap from "p-map";
 
-const baseUrl = `https://raw.githack.com/proofxyz/moonbirds-assets/main/collection/png`;
+const baseUrl = `https://raw.githack.com/Tigerchops/Scribed-Bricks/images`;
 const items = Array.from({ length: 10_000 })
   .fill(0)
   .map((_, index) => index);
@@ -57,10 +57,10 @@ await pMap(
       async (x) => {
         if (x.eth) {
           stats.minted += 1;
-          html += `<a href="https://ethscriptions.com/ethscriptions/${x.eth.transaction_hash}" target="_blank" class="item" data-minted="true" style="opacity: 0.5" title="MINTED! Moonbird ${x.index}" data-id="${x.index}"><img alt="Moonbird ${x.index}" loading="lazy" src="https://api.ethscriptions.com/api/ethscriptions/${x.eth.transaction_hash}/data" style="width: 150px; height: 150px; border: 2px dashed red;"></a>`;
+          html += `<a href="https://ethscriptions.com/ethscriptions/${x.eth.transaction_hash}" target="_blank" class="item" data-minted="true" style="opacity: 0.5" title="MINTED! Scribed-Brick ${x.index}" data-id="${x.index}"><img alt="Scribed-Brick ${x.index}" loading="lazy" src="https://api.ethscriptions.com/api/ethscriptions/${x.eth.transaction_hash}/data" style="width: 128px; height: 128px; border: 2px dashed red;"></a>`;
         } else {
-          html += `<div class="item" data-id="${x.index}" title="Moonbird ${x.index}"><img alt="Moonbird ${x.index}" loading="lazy" src="${x.dataURI}" style="width: 150px; height: 150px;"></div>`;
-          // const div = `<div class="item" data-id="${index}"><img alt="Moonbird ${index}" src="https://api.github.com/repos/proofxyz/moonbirds-assets/contents/collection/png/${index}.png" style="width: 150px; height: 150px;"></div>`;
+          html += `<div class="item" data-id="${x.index}" title="Scribed-bricks ${x.index}"><img alt="Scribed-Brick ${x.index}" loading="lazy" src="${x.dataURI}" style="width: 1280px; height: 128px;"></div>`;
+          // const div = `<div class="item" data-id="${index}"><img alt="Moonbird ${index}" src="https://api.github.com/repos/Tigerchops/Scribed-Bricks/images/${index}.png" style="width: 128px; height: 128px;"></div>`;
         }
       },
       { concurrency: 50 }
