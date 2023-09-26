@@ -1,0 +1,1 @@
+Scribed-Bricks SVG Logo
